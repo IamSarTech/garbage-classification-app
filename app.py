@@ -5,6 +5,7 @@ import streamlit as st
 from dotenv import load_dotenv
 import os
 import openai
+import tensorflow as tf
 from openai import ChatCompletion
 
 
@@ -18,7 +19,8 @@ def classify_waste(img):
     np.set_printoptions(suppress=True)
 
     # Load the model
-    model = load_model("keras_model.h5", compile=False)
+    model = tf.keras.models.load_model("keras_model.h5", compile=False)
+    model.save("keras_model.keras")
 
     # Load the labels
     class_names = open("labels.txt", "r").readlines()
