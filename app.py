@@ -19,7 +19,7 @@ def classify_waste(img):
     np.set_printoptions(suppress=True)
 
     # Load the model
-    model = tf.keras.models.load_model("keras_model.h5", compile=False)
+    model = tf.keras.models.load_model("keras_model.keras", compile=False)
     model.save("keras_model.keras")
 
     # Load the labels
